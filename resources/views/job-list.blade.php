@@ -24,7 +24,7 @@
 <body class="antialiased">
 <div class="row text-center alert-secondary">
     <div class="col-sm-12">
-        Projenin Biteceği Toplam Süre
+        Estimated Total Time to Finish the Project
     </div>
     <div class="col-sm-12">
         <span>{{$general_data['totalProjectTime']}}</span>
@@ -33,44 +33,44 @@
 <hr>
 <div class="row text-center alert-warning">
     <div class="col-sm">
-        Ortalama Haftada Bitireceği İş Sayısı
+        Average Number of Jobs to be Completed per Week
     </div>
     @foreach($general_data['averageWeek'] as $key => $data)
         <div class="col-sm">
-            <span>{{$data}} İş</span>
+            <span>{{$data}} Job</span>
         </div>
     @endforeach
 </div>
 <hr>
 <div class="row text-center alert-success">
     <div class="col-sm">
-        Çalışacağı İş Adedi
+        Number of Jobs to Work
     </div>
     @foreach($general_data['totalJob'] as $key => $data)
         <div class="col-sm">
-            <span>{{$data}} Adet</span>
+            <span>{{$data}} Piece</span>
         </div>
     @endforeach
 </div>
 <hr>
 <div class="row text-center alert-primary">
     <div class="col-sm">
-        Çalışacağı Saat Sayısı
+        Number of Hours to Work
     </div>
     @foreach($general_data['time'] as $key => $data)
         <div class="col-sm">
-            <span>{{$data}} Saat</span>
+            <span>{{$data}} Hours</span>
         </div>
     @endforeach
 </div>
 <hr>
 <div class="row text-center alert-info">
     <div class="col-sm">
-        Çalışacağı Hafta Sayısı
+        Number of Weeks to Work
     </div>
     @foreach($general_data['week'] as $key => $data)
         <div class="col-sm">
-            <span>{{$data}} Hafta Ortalama</span>
+            <span>{{$data}} Week Average</span>
         </div>
     @endforeach
 </div>
@@ -79,24 +79,24 @@
     <!-- Start İş Listesi -->
     <div class="col-md-2">
         <div class="col-xs-12" align="center">
-            <h5>GENEL İŞ LİSTESİ</h5>
+            <h5>GENERAL JOB LIST</h5>
         </div>
         <table class="table table-dark table-hover">
             <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">İş</th>
-                <th scope="col">Zorluk Seviyesi</th>
-                <th scope="col">Tamamlanması Gereken Süre</th>
+                <th scope="col">Job ID</th>
+                <th scope="col">Job</th>
+                <th scope="col">Level</th>
+                <th scope="col">Estimated Duration</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($jobList as $key => $job)
+            @foreach($jobList as $job)
                 <tr>
-                    <th scope="row">{{$key}}</th>
-                    <th>{{$job['id']}}</th>
-                    <td>{{$job['zorluk']}}</td>
-                    <td>{{$job['sure']}}</td>
+                    <th scope="row">{{$job->id}}</th>
+                    <th>{{$job->job}}</th>
+                    <td>{{$job->level}}</td>
+                    <td>{{$job->estimated_duration}}</td>
                 </tr>
             @endforeach
             </tbody>
@@ -107,24 +107,24 @@
     <!-- Start Dev. 1 -->
     <div class="col-md-2">
         <div class="col-xs-12" align="center">
-            <h5>Dev. 1 İş Listesi</h5>
+            <h5>Developer - 1 Job List</h5>
         </div>
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">İş</th>
-                <th scope="col">Seviye</th>
-                <th scope="col">Tamamlanan Süre</th>
+                <th scope="col">Job ID</th>
+                <th scope="col">Job</th>
+                <th scope="col">Level</th>
+                <th scope="col">Estimated Duration</th>
             </tr>
             </thead>
             <tbody>
             @foreach($dev1 as $key => $job)
                 <tr>
-                    <th scope="row">{{$key}}</th>
-                    <th>{{$job['id']}}</th>
-                    <td>{{$job['zorluk']}}</td>
-                    <td>{{$job['sure']}}</td>
+                    <th scope="row">{{$job->id}}</th>
+                    <th>{{$job->job}}</th>
+                    <td>{{$job->level}}</td>
+                    <td>{{$job->estimated_duration}}</td>
                 </tr>
             @endforeach
             </tbody>
@@ -135,24 +135,24 @@
     <!-- Start Dev. 2 -->
     <div class="col-md-2">
         <div class="col-xs-12" align="center">
-            <h5>Dev. 2 İş Listesi</h5>
+            <h5>Developer - 2 Job List</h5>
         </div>
         <table class="table table-dark table-hover">
             <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">İş</th>
-                <th scope="col">Seviye</th>
-                <th scope="col">Tamamlanan Süre</th>
+                <th scope="col">Job ID</th>
+                <th scope="col">Job</th>
+                <th scope="col">Level</th>
+                <th scope="col">Estimated Duration</th>
             </tr>
             </thead>
             <tbody>
             @foreach($dev2 as $key => $job)
                 <tr>
-                    <th scope="row">{{$key}}</th>
-                    <th>{{$job['id']}}</th>
-                    <td>{{$job['zorluk']}}</td>
-                    <td>{{$job['sure']}}</td>
+                    <th scope="row">{{$job->id}}</th>
+                    <th>{{$job->job}}</th>
+                    <td>{{$job->level}}</td>
+                    <td>{{$job->estimated_duration}}</td>
                 </tr>
             @endforeach
             </tbody>
@@ -163,24 +163,24 @@
     <!-- Start Dev. 3 -->
     <div class="col-md-2">
         <div class="col-xs-12" align="center">
-            <h5>Dev. 3 İş Listesi</h5>
+            <h5>Developer - 3 Job List</h5>
         </div>
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">İş</th>
-                <th scope="col">Seviye</th>
-                <th scope="col">Tamamlanan Süre</th>
+                <th scope="col">Job ID</th>
+                <th scope="col">Job</th>
+                <th scope="col">Level</th>
+                <th scope="col">Estimated Duration</th>
             </tr>
             </thead>
             <tbody>
             @foreach($dev3 as $key => $job)
                 <tr>
-                    <th scope="row">{{$key}}</th>
-                    <th>{{$job['id']}}</th>
-                    <td>{{$job['zorluk']}}</td>
-                    <td>{{$job['sure']}}</td>
+                    <th scope="row">{{$job->id}}</th>
+                    <th>{{$job->job}}</th>
+                    <td>{{$job->level}}</td>
+                    <td>{{$job->estimated_duration}}</td>
                 </tr>
             @endforeach
             </tbody>
@@ -191,24 +191,24 @@
     <!-- Start Dev. 4 -->
     <div class="col-md-2">
         <div class="col-xs-12" align="center">
-            <h5>Dev. 4 İş Listesi</h5>
+            <h5>Developer - 4 Job List</h5>
         </div>
         <table class="table table-dark table-hover">
             <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">İş</th>
-                <th scope="col">Seviye</th>
-                <th scope="col">Tamamlanan Süre</th>
+                <th scope="col">Job ID</th>
+                <th scope="col">Job</th>
+                <th scope="col">Level</th>
+                <th scope="col">Estimated Duration</th>
             </tr>
             </thead>
             <tbody>
             @foreach($dev4 as $key => $job)
                 <tr>
-                    <th scope="row">{{$key}}</th>
-                    <th>{{$job['id']}}</th>
-                    <td>{{$job['zorluk']}}</td>
-                    <td>{{$job['sure']}}</td>
+                    <th scope="row">{{$job->id}}</th>
+                    <th>{{$job->job}}</th>
+                    <td>{{$job->level}}</td>
+                    <td>{{$job->estimated_duration}}</td>
                 </tr>
             @endforeach
             </tbody>
@@ -219,24 +219,24 @@
     <!-- Start Dev. 5 -->
     <div class="col-md-2">
         <div class="col-xs-12" align="center">
-            <h5>Dev. 5 İş Listesi</h5>
+            <h5>Developer - 5 Job List</h5>
         </div>
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">İş</th>
-                <th scope="col">Seviye</th>
-                <th scope="col">Tamamlanan Süre</th>
+                <th scope="col">Job ID</th>
+                <th scope="col">Job</th>
+                <th scope="col">Level</th>
+                <th scope="col">Estimated Duration</th>
             </tr>
             </thead>
             <tbody>
             @foreach($dev5 as $key => $job)
                 <tr>
-                    <th scope="row">{{$key}}</th>
-                    <th>{{$job['id']}}</th>
-                    <td>{{$job['zorluk']}}</td>
-                    <td>{{$job['sure']}}</td>
+                    <th scope="row">{{$job->id}}</th>
+                    <th>{{$job->job}}</th>
+                    <td>{{$job->level}}</td>
+                    <td>{{$job->estimated_duration}}</td>
                 </tr>
             @endforeach
             </tbody>
