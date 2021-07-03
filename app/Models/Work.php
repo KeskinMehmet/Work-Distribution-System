@@ -12,6 +12,7 @@ class Work extends Model
         'job',
         'level',
         'estimated_duration',
+        'dev_id',
     ];
 
 }

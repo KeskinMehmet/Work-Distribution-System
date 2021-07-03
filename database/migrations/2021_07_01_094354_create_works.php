@@ -15,9 +15,10 @@ class CreateWorks extends Migration
     {
         Schema::create('works', function (Blueprint $table) {
             $table->id();
-            $table->string('job')->nullable(false);
+            $table->string('job')->nullable(false)->unique();
             $table->integer('level')->nullable(false);
             $table->integer('estimated_duration')->nullable(false);
+            $table->integer('dev_id')->nullable(false);
             $table->timestamps();
         });
     }
