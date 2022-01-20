@@ -1,1 +1,1 @@
-It is a project made for a company interview.
+Belli işlerin belli çalışanlara çalışanların zorluk, ve iş yüklerine göre işlerin zorluk ve sürelerine göre sistem tarafından otomatik şekilde işlerin en kısa süre de tamamlanmasını sağlayan, laravel ile geliştirilmiş test projesidir.
